@@ -5,7 +5,7 @@ import time
 
 class TestAbs(unittest.TestCase):
     def test_registration_1(self):
-        browser = webdriver.chroome()
+        browser = webdriver.Chrome()
         browser.get("http://suninjuly.github.io/registration1.html")
 
       # Ваш код, который заполняет обязательные поля
@@ -38,7 +38,7 @@ class TestAbs(unittest.TestCase):
 
     def test_registration_2(self):
 
-        browser = webdriver.chroome()
+        browser = webdriver.Chrome()
         browser.get("http://suninjuly.github.io/registration2.html")
 
       # Ваш код, который заполняет обязательные поля
