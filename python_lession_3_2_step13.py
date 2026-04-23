@@ -1,10 +1,9 @@
-import unittest
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 
-class TestAbs(unittest.TestCase):
-    def test_registration_1(self):
+def test_registration_1():
         browser = webdriver.Chrome()
         browser.get("http://suninjuly.github.io/registration1.html")
 
@@ -28,15 +27,18 @@ class TestAbs(unittest.TestCase):
 
     # находим элемент, содержащий текст
         welcome_text_elt = browser.find_element(By.TAG_NAME, "h1")
-    # записываем в переменную welcome_text текст из элемента welcome_text_elt
         welcome_text = welcome_text_elt.text
+    # записываем в переменную welcome_text текст из элемента welcome_text_elt
+        assert welcome_text == "Congratulations! You have successfully registered!"
+    # записываем в переменную welcome_text текст из элемента welcome_text_elt
+        #welcome_text = welcome_text_elt.text
 
     # с помощью assert проверяем, что ожидаемый текст совпадает с текстом на странице сайта
-        self.assertEqual ("Congratulations! You have successfully registered!", welcome_text, "Текст приветствия не совпадает!") 
+        #self.assertEqual ("Congratulations! You have successfully registered!", welcome_text, "Текст приветствия не совпадает!") 
 
         browser.quit()
 
-    def test_registration_2(self):
+def test_registration_2():
 
         browser = webdriver.Chrome()
         browser.get("http://suninjuly.github.io/registration2.html")
@@ -62,13 +64,8 @@ class TestAbs(unittest.TestCase):
     # находим элемент, содержащий текст
         welcome_text_elt = browser.find_element(By.TAG_NAME, "h1")
     # записываем в переменную welcome_text текст из элемента welcome_text_elt
-        welcome_text = welcome_text_elt.text
-
-    # с помощью assert проверяем, что ожидаемый текст совпадает с текстом на странице сайта
-        self.assertEqual ("Congratulations! You have successfully registered!", welcome_text, "Текст приветствия не совпадает!") 
-
+        assert welcome_text_elt == "Congratulations! You have successfully registered!"
         browser.quit()
 
 
-if __name__ == "__main__":
-    unittest.main()
+
